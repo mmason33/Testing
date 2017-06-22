@@ -1,0 +1,9 @@
+
+#hangman-container {
+	margin: 0 auto;
+	position: relative;
+	top: 15vh;
+	width: auto;
+	max-width: 40vw;
+	height: auto;
+}
