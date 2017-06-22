@@ -6,7 +6,11 @@ This is just a reference guide for myself - over time as progress as a programme
 ### Classes, Arrow Functions & Factory Functions
 
 ```javascript
+//declare array
+
 let wordList = ['javascript', 'html', 'css', 'constructor'];
+
+//class
 
 class Hangman {
 
@@ -23,6 +27,7 @@ class Hangman {
 		canvas.style.height = this.height;
 		console.log(this.color, this.height, this.width);
 	}
+	
 }
 
 let game = new Hangman('600px', '600px', 'black');
@@ -31,6 +36,7 @@ game.start();
 //class
 
 class generateWord1 {
+
 	constructor(array) {
 		this.array = array;	
 	}
@@ -38,27 +44,27 @@ class generateWord1 {
 	randomWord1 () {
 
 		for (let i = 0; i <= this.array.length; i++) {
-				let list = this.array;
-				let word = list[Math.floor(Math.random() * list.length)];
-				return word;
-
+			let list = this.array;
+			let word = list[Math.floor(Math.random() * list.length)];
+			return word;
 		}
+
 	}
+
 }
 
 let word1 = new generateWord1(wordList);
 console.log(word1.randomWord1());
 
-//"arrow function"
+//arrow function
 
 let randomWord2 = (array) => {
 
-		for (let i = 0; i <= array.length; i++) {
-				let list = array;
-				let word = list[Math.floor(Math.random() * list.length)];
-				return word;
-			
-		}
+	for (let i = 0; i <= array.length; i++) {
+		let list = array;
+		let word = list[Math.floor(Math.random() * list.length)];
+		return word;
+	}
 
 }
 
@@ -67,7 +73,7 @@ console.log(word2);
 
 
 
-//object
+//factory function?
 
 const generateWord2 = {
 
@@ -77,7 +83,6 @@ const generateWord2 = {
 			let list = array;
 			let word = list[Math.floor(Math.random() * list.length)];
 			return word;
-			
 		}
 
 	}
