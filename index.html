@@ -85,38 +85,34 @@ class Hangman {
 }
 
 
-const hangman = new Hangman();
+const hangman = new Hangman("Hangman Game");
 
 document.addEventListener("DOMContentLoaded", function(){
 
 	function difficultyLevel(id, wordDifficultly){
 
-		function onetime(node, type, callback) {
+			function onetime(node, type, callback) {
 
-			node.addEventListener(type, function(e) {
+				node.addEventListener(type, function(e) {
 
-				e.target.removeEventListener(e.type, arguments.callee);
+					e.target.removeEventListener(e.type, arguments.callee);
 
-				return callback(e);
-			});
+					return callback(e);
+				});
 
-		}
-
-		function handleClick() {
-			if ( id === 'easy') {
-				hangman.start(easyWord);
-			} else {
-				hangman.start(hardWord);
 			}
 
-			while (difficulty.firstChild) {
-				difficulty.removeChild(difficulty.firstChild);
+			function handleClick() {
+				if ( id === 'easy') {
+					hangman.start(easyWord);
+				} else {
+					hangman.start(hardWord);
+				}
+
+				while (difficulty.firstChild) {
+					difficulty.removeChild(difficulty.firstChild);
+				}
 			}
-		}
-
-		onetime(document.getElementById(id), 'click', handleClick);
-
-		// document.getElementById(id).removeEventListener('click', handleClick);
 
 
 			document.addEventListener("keypress", function(event){
@@ -126,6 +122,7 @@ document.addEventListener("DOMContentLoaded", function(){
 
 	}
 
+	onetime(document.getElementById(id), 'click', handleClick);
 	difficultyLevel('easy', easyWord);
 	difficultyLevel('hard', hardWord);
 
