@@ -119,10 +119,9 @@ document.addEventListener("DOMContentLoaded", function(){
 				hangman.handleKey(wordDifficultly);
 			});
 
-
+			onetime(document.getElementById(id), 'click', handleClick);
 	}
 
-	onetime(document.getElementById(id), 'click', handleClick);
 	difficultyLevel('easy', easyWord);
 	difficultyLevel('hard', hardWord);
 
